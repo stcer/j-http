@@ -1,0 +1,20 @@
+<h1>消息状态</h1>
+
+<h4>事件(成功发送)</h4>
+<ul>
+    <li v-for="value in status.event_success">
+        {{ $key }}: {{value}}
+    </li>
+</ul>
+
+<h4>事件(失败发送)</h4>
+<ul>
+    <li v-for="value in status.event_error">
+        {{ $key }}: {{value}}
+    </li>
+</ul>
+
+<strong>时间</strong>
+<ul><li>{{status.time}}</li></ul>
+
+<button class="btn btn-default" v-on:click="update()"> 刷新 </button>

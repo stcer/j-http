@@ -1,0 +1,99 @@
+
+<h1>订阅者信息</h1>
+
+<div v-show="showMessage"
+     transition="expand"
+     v-bind:class="classObject"
+     role="alert">
+    {{message}}
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>events</th>
+            <th>url</th>
+            <th>错误尝试次数</th>
+            <th><a v-on:click="reverse()">是否有效</a></th>
+            <th>操作</th>
+        </tr>
+    </thead>
+
+    <tr v-for="c in customer | orderBy 'enable' order"
+        v-bind:class="{'class-disable' : c.enable <= 0}" >
+        <td>{{c.id}}</td>
+        <td>{{c.events}}</td>
+        <td>{{c.url}}</td>
+        <td>{{c.tryTimes}}</td>
+        <td>{{c.enable|enableName}}</td>
+        <td><a v-on:click="edit(c)" style="cursor: pointer">编辑</a></td>
+    </tr>
+</table>
+
+<button class="btn btn-default" v-on:click="add()" type="submit">增加订阅者</button>
+
+<div class="modal fade" id="myModal"
+     tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">编辑订阅者</h4>
+            </div>
+
+            <div class="modal-body">
+            <div v-show="showError"
+                 v-bind:class="classObject"
+                 role="alert">
+                {{message}}
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label>ID</label>
+                    <input type="text" class="form-control"
+                           v-disable="active.id"
+                           v-model="active.id"
+                           placeholder="需要保持唯一"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label>Topic (Events订阅事件)</label>
+                    <input type="text" class="form-control"
+                           v-model="active.events"
+                           placeholder="多个以,分隔" />
+                </div>
+
+                <div class="form-group">
+                    <label>Consumer Url(接收消息地址)</label>
+                    <input type="text" class="form-control"
+                           v-model="active.url" />
+                </div>
+
+                <div class="form-group">
+                    <label>错误尝试次数</label>
+                    <input type="text" class="form-control"
+                           v-model="active.tryTimes" />
+                </div>
+
+                <div class="form-group">
+                    <input type="radio" id="one" value="1" v-model="active.enable">
+                    <label for="one">有效</label>
+
+                    <input type="radio" id="two" value="0" v-model="active.enable">
+                    <label for="two">无效</label>
+                </div>
+            </form>
+            </div>
+
+            <div class="modal-footer">
+                <a  v-on:click="save()"
+                   class="btn btn-primary">Submit</a>
+            </div>
+        </div>
+    </div>
+</div>

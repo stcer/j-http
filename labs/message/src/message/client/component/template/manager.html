@@ -1,0 +1,10 @@
+<h1>服务器管理</h1>
+
+<div v-show="showMessage"
+     v-bind:class="classObject"
+     role="alert">
+    {{msg}}
+</div>
+
+<button class="btn btn-default" v-on:click="reload()"> 重启 </button>
+<button class="btn btn-default" v-on:click="close()"> 关闭 </button>
