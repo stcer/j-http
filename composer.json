@@ -16,7 +16,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@192.168.0.252:repos/ide_doc.git"
+            "url":  "git@192.168.0.252:repos/ide-doc.git"
         },
         {
             "type": "vcs",
@@ -34,7 +34,7 @@
     },
 
     "require-dev" : {
-        "stcer/j-doc" : "*",
+        "stcer/ide-doc" : "*",
         "monolog/monolog" : "*"
     },
 
