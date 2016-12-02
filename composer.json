@@ -1,5 +1,5 @@
 {
-    "name": "stcer/jhttp",
+    "name": "stcer/j-http",
     "authors": [
         {
             "name": "stcer",
@@ -20,7 +20,7 @@
         },
         {
             "type": "vcs",
-            "url":  "git@192.168.0.252:repos/j_log.git"
+            "url":  "git@192.168.0.252:repos/j-log.git"
         },
         {
             "type": "composer",
@@ -30,11 +30,11 @@
     ],
 
     "require": {
-        "stcer/jlog" : "dev-master"
+        "stcer/j-log" : "dev-master"
     },
 
     "require-dev" : {
-        "stcer/jdoc" : "*",
+        "stcer/j-doc" : "*",
         "monolog/monolog" : "*"
     },
 
