@@ -20,7 +20,7 @@
         },
         {
             "type": "vcs",
-            "url":  "git@192.168.0.252:repos/j-log.git"
+            "url":  "git@192.168.0.252:repos/j-core.git"
         },
         {
             "type": "composer",
@@ -30,7 +30,7 @@
     ],
 
     "require": {
-        "stcer/j-log" : "dev-master"
+        "stcer/j-core" : "dev-master"
     },
 
     "require-dev" : {
