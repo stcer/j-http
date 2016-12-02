@@ -6,7 +6,8 @@ use Swoole\Http\Request as SRequest;
 use Swoole\Http\Response as SResponse;
 use swoole_http_request;
 use swoole_http_response;
-use j\log;
+
+use j\log\TraitLog;
 use Exception;
 use Closure;
 
@@ -15,7 +16,7 @@ use Closure;
  * @package j\network\http
  */
 class Protocol {
-    use log\TraitLog;
+    use TraitLog;
 
     /**
      * @var string

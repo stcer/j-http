@@ -16,7 +16,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@192.168.0.252:repos/other_php_doc.git"
+            "url":  "git@192.168.0.252:repos/ide_doc.git"
         },
         {
             "type": "vcs",
@@ -30,11 +30,12 @@
     ],
 
     "require": {
-        "stcer/jlog" : "*"
+        "stcer/jlog" : "dev-master"
     },
 
     "require-dev" : {
-        "stcer/jdoc" : "*"
+        "stcer/jdoc" : "*",
+        "monolog/monolog" : "*"
     },
 
     "config" : {

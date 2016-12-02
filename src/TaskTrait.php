@@ -16,9 +16,10 @@ trait TaskTrait {
     /**
      * @param $message
      * @param string $type
+     * @param [] $context
      * @return mixed
      */
-    abstract protected function log($message, $type = 'info');
+    abstract protected function log($message, $type = 'info', $context = []);
 
     /**
      * @return taskManager
