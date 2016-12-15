@@ -17,12 +17,8 @@
 
     "repositories": [
         {
-            "type": "vcs",
-            "url":  "git@192.168.0.252:repos/ide-doc.git"
-        },
-        {
-            "type": "vcs",
-            "url":  "git@192.168.0.252:repos/j-core.git"
+            "type": "composer",
+            "url": "http://packages.9z.cn"
         },
         {
             "type": "composer",
