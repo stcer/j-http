@@ -3,6 +3,9 @@
 namespace j\network\http;
 
 use Closure;
+use j\debug\Debug;
+use j\net\base\TaskManager;
+use j\net\base\TaskTrait;
 use swoole_http_server;
 use swoole_http_request;
 use swoole_http_response;

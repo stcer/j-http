@@ -33,7 +33,7 @@
 
     "require-dev" : {
         "stcer/ide-doc" : "*",
-        "monolog/monolog" : "*"
+        "monolog/monolog" : "1.21.0"
     },
 
     "config" : {

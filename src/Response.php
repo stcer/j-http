@@ -2,7 +2,7 @@
 
 namespace j\network\http;
 
-use swoole_http_response as Base;
+use Swoole\Http\Response as Base;
 
 /**
  * Class Response

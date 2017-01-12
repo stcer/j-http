@@ -15,6 +15,8 @@ class ParserStatic {
      */
     protected $documentRoot;
 
+    public $expireTime = 86400;
+
     /**
      * @var string
      * admin wg123123
@@ -156,8 +158,20 @@ class ParserStatic {
             return;
         }
 
+        $fileStat = stat($realPath);
+        if (isset($request->header['if-modified-since'])){
+            $lastModifiedSince = strtotime($request->header['if-modified-since']);
+            if ($lastModifiedSince && $fileStat['mtime'] <= $lastModifiedSince){
+                $response->status(304);
+                $response->end();
+                return;
+            }
+        }
+
+        $response->header('Cache-Control', "max-age={$this->expireTime},must-revalidate");
+        $response->header('Last-Modified', date('D, d-M-Y H:i:s T', $fileStat['mtime']));
         $response->header('Content-type', $this->miniTypes[$ext]);
-        $response->end(file_get_contents($realPath));
+        $response->sendfile($realPath);
     }
 
     protected function getDocRootPath($path){

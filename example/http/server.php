@@ -7,7 +7,7 @@ $loader->add("cgi", __DIR__);
 $loader->register();
 
 $ip = '0.0.0.0';
-$port = '8081';
+$port = '8080';
 $ssl = __DIR__ . '/ssl/';
 $ssl = false;
 

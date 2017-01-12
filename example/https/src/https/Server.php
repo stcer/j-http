@@ -71,7 +71,7 @@ class Server {
     }
 
     /**
-     * 
+     *
      */
     function run(){
         if(!isset($this->sslKeyPath)){
