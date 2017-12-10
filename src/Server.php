@@ -211,10 +211,18 @@ class Server {
             'onFinish' => 'Finish',
             'onRequest' => 'request',
         ];
+        $this->bindEventOnTarget($server, $binds, $this);
+    }
 
-        foreach($binds as $method => $evt){
-            if(method_exists($this, $method)) {
-                $server->on($evt, array($this, $method));
+    /**
+     * @param swoole_http_server $server
+     * @param array $eventMap
+     * @param object $target
+     */
+    protected function bindEventOnTarget($server, $eventMap, $target){
+        foreach($eventMap as $method => $evt){
+            if(method_exists($target, $method)) {
+                $server->on($evt, array($target, $method));
             }
         }
     }
