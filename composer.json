@@ -28,7 +28,9 @@
     ],
 
     "require": {
-        "stcer/j-core" : "dev-master"
+        "php": ">=5.4.0",
+        "ext-swoole" : ">=1.8.6",
+        "stcer/j-core" : "*"
     },
 
     "require-dev" : {

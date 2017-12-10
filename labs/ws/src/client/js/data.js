@@ -59,7 +59,7 @@ var JChatData = (function(){
 
         offline : function(user) {
             for(var i in this.data.online){
-                if(this.data.online[i].fd == user.fd){
+                if(this.data.online[i].fd === user.fd){
                     this.data.online[i].offline = true;
                     break;
                 }
@@ -68,7 +68,7 @@ var JChatData = (function(){
 
         rename : function(data) {
             for(var i in this.data.online){
-                if(this.data.online[i].fd == data.fd){
+                if(this.data.online[i].fd === data.fd){
                     this.data.online[i].user = data.user;
                     break;
                 }

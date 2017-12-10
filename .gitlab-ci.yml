@@ -6,3 +6,12 @@ build-composer-package:
     only:
         - tags
         - master
+
+rsync-repo:
+    script:
+        - sh -x /usr/local/sbin/rsyncGitRepo.sh myali
+    stage: build
+    tags:
+        - dev
+    only:
+        - master

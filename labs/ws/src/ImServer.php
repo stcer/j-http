@@ -74,7 +74,9 @@ class ImServer extends Server{
 
         if(is_string($this->protocol)){
             $this->protocol = new $this->protocol();
+            $this->protocol->setLogger($this->getLogger());
         }
+
         return $this->protocol;
     }
 }

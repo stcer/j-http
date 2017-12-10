@@ -1,5 +1,6 @@
 
-var Chat = new JChat('ws://192.168.0.183:9503');
+var Chat = new JChat('ws://192.168.0.175:9503');
+
 Chat.data.on('message.add', function(){
     // for vue dom
     setTimeout(function(){

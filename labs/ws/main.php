@@ -5,7 +5,7 @@ require __DIR__ . "/boot.inc.php";
 use ws\ImServer;
 use j\log\Log;
 
-$server = new ImServer('192.168.0.183', 9503);
+$server = new ImServer('0.0.0.0', 9503);
 $server->documentRoot = __DIR__ . "/src/client/";
 $server->actionNs = 'ws\\cgi\\';
 $server->setLogger(new Log());

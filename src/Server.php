@@ -11,7 +11,6 @@ use swoole_http_request;
 use swoole_http_response;
 use j\log\TraitLog;
 
-
 /**
  * Class Server
  * @package j\network\http
@@ -26,6 +25,7 @@ use j\log\TraitLog;
  * 
  */
 class Server {
+
     use TraitLog;
 	use TaskTrait;
 
